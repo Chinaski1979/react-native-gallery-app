@@ -20,6 +20,7 @@ const Dropdown = ({currentSearchParams, filteringOptions, setQueryParams}: IProp
     <View>
       {filteringOptions.map((option) => {
         return (<SelectDropdown
+          key={ option.name }
           data={option.options}
           onSelect={(selectedItem, index) => handleSelect(option.name, selectedItem)}
           buttonTextAfterSelection={(selectedItem, index) => {

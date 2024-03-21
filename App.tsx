@@ -6,7 +6,12 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import HomeScreen from './src/Screens/Home';
 import PhotoDetailScreen from './src/Screens/PhotoDetail';
 
-const Stack = createNativeStackNavigator();
+export type RootStackParamList = {
+  Home: undefined;
+  PhotoDetail: { photo: {} };
+};
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 const queryClient = new QueryClient();
 
 export default function App() {
